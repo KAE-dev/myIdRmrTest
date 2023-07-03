@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Test MyId</title>        
-    </head>
-    <body>
-        <h1>TEST</h1>
-        <iframe id="myid_iframe" src="https://docs.myid.uz/iframe" allow="camera;fullscreen" allowfullscreen border="0"></iframe>
-    </body>
-    <script>
+<head>
+    <title>Test MyId</title>
+</head>
+<body>
+<h1>TEST</h1>
+<iframe id="myid_iframe" src="https://docs.myid.uz/iframe" allow="camera;fullscreen" allowfullscreen
+        border="0"></iframe>
+</body>
+<script>
         window.addEventListener('message', function (e) {
             console.log(e.data)
             // Ваша логика...
@@ -15,5 +17,6 @@
                 iframe.contentWindow.postMessage({cmd: 'open', config: {locale: 'ru'}}, '*');
             }
         });
-    </script>
+
+</script>
 </html>
