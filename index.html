@@ -20,15 +20,18 @@
         window.addEventListener('message', function (e) {
             console.log(e.data)
 
-            // Ваша логика...
-            if (e.data.cmd == -1) {
-                iframe = document.getElementById('myid_iframe'); //Используйте refs, если вы используете React, Vue
-                iframe.contentWindow.postMessage({cmd: 'open', config: {locale: 'ru', disableSwitch: true, threshold: 70, allowOnMobile: true}}, '*');
-            }
+            iframe = document.getElementById('myid_iframe'); //Используйте refs, если вы используете React, Vue
+            iframe.contentWindow.postMessage({cmd: 'open', config: {locale: 'ru', disableSwitch: true, threshold: 70, allowOnMobile: true}}, '*');
 
-            if (e.data.cmd === -2) {
-                alert(e.data.message);
-            }
+            // Ваша логика...
+<!--            if (e.data.cmd == -1) {-->
+<!--                iframe = document.getElementById('myid_iframe'); //Используйте refs, если вы используете React, Vue-->
+<!--                iframe.contentWindow.postMessage({cmd: 'open', config: {locale: 'ru', disableSwitch: true, threshold: 70, allowOnMobile: true}}, '*');-->
+<!--            }-->
+
+<!--            if (e.data.cmd === -2) {-->
+<!--                alert(e.data.message);-->
+<!--            }-->
         });
     </script>
 </html>
