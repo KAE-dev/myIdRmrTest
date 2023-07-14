@@ -14,7 +14,7 @@
         }
     </style>
 <body>
-<iframe id="myid_iframe" src="https://docs.myid.uz/iframe" allow="camera;fullscreen;allowOnMobile" allowfullscreen border="0" ></iframe>
+<iframe id="myid_iframe" src="https://docs.myid.uz/iframe" allow="camera;fullscreen" allowfullscreen border="0" ></iframe>
 </body>
 <script>
         window.addEventListener('message', function (e) {
@@ -23,7 +23,15 @@
             // Ваша логика...
             if (e.data.cmd == -1) {
                 iframe = document.getElementById('myid_iframe'); //Используйте refs, если вы используете React, Vue
-                iframe.contentWindow.postMessage({cmd: 'open', config: {locale: 'ru'}}, '*');
+                iframe.contentWindow.postMessage({
+                        cmd: 'open',
+                        config: {
+                            locale: 'ru',
+                            disableSwitch: true,
+                            threshold: 70,
+                            allowOnMobile: true
+                        }
+                    }, '*')});
             }
 
             if (e.data.cmd === -2) {
